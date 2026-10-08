@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmileSpot | Your Perfect Smile Starts Here</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #183b56;
+            background: #f8fdff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        header {
+            width: 100%;
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #13a8c7;
+        }
+
+        .logo span {
+            color: #183b56;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #183b56;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #13a8c7;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(120deg, #e9fbff, #ffffff);
+        }
+
+        .hero-text {
+            max-width: 560px;
+        }
+
+        .hero-text h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #183b56;
+        }
+
+        .hero-text h1 span {
+            color: #13a8c7;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #587386;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #13a8c7;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0b879f;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            width: 48%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(19,168,199,0.2);
+        }
+
+        /* ABOUT */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #183b56;
+        }
+
+        .section-title p {
+            color: #718795;
+            margin-top: 8px;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            width: 45%;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 25px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #657b88;
+            margin-bottom: 20px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #eefaff;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(19,168,199,0.15);
+        }
+
+        .card-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #183b56;
+        }
+
+        .card p {
+            color: #718795;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* APPOINTMENT */
+
+        .appointment {
+            background: linear-gradient(120deg, #13a8c7, #0c8fa9);
+            color: white;
+            text-align: center;
+            border-radius: 30px;
+            margin: 50px 8%;
+            padding: 70px 20px;
+        }
+
+        .appointment h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .appointment p {
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+
+        .appointment .btn {
+            background: white;
+            color: #0b91ad;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 25px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .contact-box h3 {
+            color: #13a8c7;
+            margin-bottom: 5px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #183b56;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: #42d4ed;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 900px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .hero-image {
+                width: 90%;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 90%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .cards,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .appointment {
+                margin: 30px 5%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="logo">
+            🦷 Smile<span>Spot</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>
+                Your Smile,<br>
+                Our <span>Passion.</span>
+            </h1>
+
+            <p>
+                Welcome to SmileSpot — where modern dental care
+                meets comfort, technology and beautiful smiles.
+            </p>
+
+            <a href="#contact" class="btn">
+                Book an Appointment
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80"
+                alt="Dentist">
+                
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about">
+
+        <div class="about">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80"
+                    alt="Dental Clinic">
+
+            </div>
+
+            <div class="about-text">
+
+                <h2>Welcome to SmileSpot</h2>
+
+                <p>
+                    At SmileSpot, we believe that every smile deserves
+                    the best care. Our clinic combines modern technology
+                    with a comfortable and friendly environment.
+                </p>
+
+                <p>
+                    From regular checkups to advanced dental treatments,
+                    our goal is to make your dental experience simple,
+                    comfortable and stress-free.
+                </p>
+
+                <a href="#services" class="btn">
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <div class="section-title">
+
+            <h2>Our Services</h2>
+
+            <p>
+                Complete dental care for your beautiful smile
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">🦷</div>
+
+                <h3>Dental Checkup</h3>
+
+                <p>
+                    Regular dental examinations to keep your
+                    teeth healthy and strong.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">✨</div>
+
+                <h3>Teeth Whitening</h3>
+
+                <p>
+                    Brighten your smile with our professional
+                    teeth whitening service.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">😁</div>
+
+                <h3>Smile Makeover</h3>
+
+                <p>
+                    Improve the appearance of your smile with
+                    personalized dental treatments.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🪥</div>
+
+                <h3>Dental Cleaning</h3>
+
+                <p>
+                    Professional cleaning to maintain fresh
+                    and healthy teeth.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">❤️</div>
+
+                <h3>Gum Care</h3>
+
+                <p>
+                    Complete care and treatment for healthier
+                    gums and a better smile.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">👨‍⚕️</div>
+
+                <h3>Expert Consultation</h3>
+
+                <p>
+                    Get professional advice from experienced
+                    dental specialists.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section id="gallery">
+
+        <div class="section-title">
+
+            <h2>Our Smile Gallery</h2>
+
+            <p>
+                A glimpse of our modern and welcoming clinic
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80"
+                alt="Dental Care">
+
+            <img
+                src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80"
+                alt="Dentist">
+
+            <img
+                src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=700&q=80"
+                alt="Dental Treatment">
+
+        </div>
+
+    </section>
+
+
+    <!-- APPOINTMENT -->
+
+    <div class="appointment">
+
+        <h2>Ready to Love Your Smile?</h2>
+
+        <p>
+            Take the first step towards a healthier and
+            brighter smile today.
+        </p>
+
+        <a href="#contact" class="btn">
+            Get an Appointment
+        </a>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact SmileSpot</h2>
+
+            <p>
+                We would love to hear from you.
+            </p>
+
+        </div>
+
+
+        <div class="contact-info">
+
+            <div class="contact-box">
+
+                <h3>📍 Address</h3>
+
+                <p>Model Town, Ludhiana</p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>📞 Phone</h3>
+
+                <p>+91 98765 43210</p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>✉ Email</h3>
+
+                <p>hello@smilespot.com</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>SmileSpot</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
